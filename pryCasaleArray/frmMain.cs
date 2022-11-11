@@ -57,5 +57,61 @@ namespace pryCasaleArray
                 indicerecorrido++;
             }
         }
+
+
+        //CREAR UNA MATRIZ - 5 alumnos y 3 notas cada uno
+        int[,] matNotas = new int[5,3];
+        private void btnCrear_Click(object sender, EventArgs e)
+        {
+            //cargar toda la matriz con datos aleatorios
+            int ifila = 0;
+            int icolumna = 0;
+            
+            Random datoAleatorio = new Random();
+
+            while (ifila < matNotas.GetLength(0))
+            {
+                icolumna = 0;
+                while (icolumna < matNotas.GetLength(1))
+                {
+                    //SI BUSCO DATOS, AQUI ESCRIBIRIA UN IF
+
+                    //voy a cargar datos aleatorios
+                    
+                    matNotas[ifila, icolumna] = datoAleatorio.Next(1, 10);
+
+                    icolumna++;
+                }
+
+                ifila++;
+            }
+        }
+
+        private void btnListarMatriz_Click(object sender, EventArgs e)
+        {
+            //for (int ifila = 0; ifila < matNotas.GetLength(0); ifila++)
+            //{
+            //    for (int icolumna = 0; icolumna < matNotas.GetLength(1); icolumna++)
+            //    {
+            //        dgvNotas.Rows.Add(matNotas[ifila, icolumna].ToString());
+            //    }
+            //}
+
+            //for (int ifila = 0; ifila < matNotas.GetLength(0); ifila++)
+            //{
+                
+            //    dgvNotas.Rows.Add(matNotas[ifila, 0].ToString(),
+            //        matNotas[ifila, 1].ToString(),
+            //        matNotas[ifila, 2].ToString());
+                
+            //}
+
+            
+            for (int ifila = 0; ifila < matNotas.GetLength(0); ifila++)
+            {
+                dgvNotas.Rows.Add("nombre mozo", "columna 2");
+            }
+
+        }
     }
 }
